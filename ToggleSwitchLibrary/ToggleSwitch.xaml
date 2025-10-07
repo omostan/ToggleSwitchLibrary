@@ -1,0 +1,88 @@
+﻿<UserControl
+    x:Class="ToggleSwitchLibrary.ToggleSwitch"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Name="root"
+    Width="60"
+    Height="30"
+    AutomationProperties.Name="{Binding Label, ElementName=root}"
+    Focusable="True">
+
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="SwitchOnForeground" Color="Green" />
+        <SolidColorBrush x:Key="SwitchOffForeground" Color="Gray" />
+    </UserControl.Resources>
+
+    <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+        <!--  Optional Label  -->
+        <TextBlock
+            Margin="0,0,8,0"
+            VerticalAlignment="Center"
+            Text="{Binding Label, ElementName=root}"
+            Visibility="{Binding LabelVisibility, ElementName=root}" />
+
+        <!--  Toggle Switch  -->
+        <ToggleButton
+            x:Name="PART_Toggle"
+            Width="50"
+            Height="25"
+            Background="Transparent"
+            BorderThickness="0"
+            Focusable="False"
+            IsChecked="{Binding IsChecked, ElementName=root, Mode=TwoWay}">
+            <ToggleButton.Template>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid>
+                        <Border
+                            x:Name="SwitchBorder"
+                            Background="{DynamicResource SwitchOffForeground}"
+                            BorderBrush="{DynamicResource SwitchOffForeground}"
+                            BorderThickness="2"
+                            CornerRadius="12.5" />
+
+                        <Ellipse
+                            x:Name="Knob"
+                            Width="21"
+                            Height="21"
+                            Margin="2"
+                            HorizontalAlignment="Left"
+                            Fill="White" />
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="SwitchBorder" Property="Background" Value="{DynamicResource SwitchOnForeground}" />
+                            <Setter TargetName="SwitchBorder" Property="BorderBrush" Value="{DynamicResource SwitchOnForeground}" />
+                            <Setter TargetName="Knob" Property="HorizontalAlignment" Value="Right" />
+                        </Trigger>
+
+                        <Trigger Property="IsChecked" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation
+                                            Storyboard.TargetName="Knob"
+                                            Storyboard.TargetProperty="Margin"
+                                            To="2,0,2,0"
+                                            Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation
+                                            Storyboard.TargetName="Knob"
+                                            Storyboard.TargetProperty="Margin"
+                                            To="2,0,2,0"
+                                            Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </ToggleButton.Template>
+        </ToggleButton>
+    </StackPanel>
+</UserControl>
