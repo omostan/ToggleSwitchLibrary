@@ -7,4 +7,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <PropertyGroup>
+  	<PackageId>ToggleSwitchLibrary</PackageId>
+  	<Version>1.0.0</Version>
+  	<Authors>Omoregie Stanley</Authors>
+  	<Company>YourCompany</Company>
+  	<Description>Reusable WPF ToggleSwitch control with themes and localization</Description>
+  	<PackageTags>WPF Toggle Switch Control UI</PackageTags>
+  </PropertyGroup>
+
 </Project>
