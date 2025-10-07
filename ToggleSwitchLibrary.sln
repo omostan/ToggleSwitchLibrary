@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36518.9 d17.14
+VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToggleSwitchLibrary", "ToggleSwitchLibrary\ToggleSwitchLibrary.csproj", "{ADBFC846-E579-4938-9881-AB9051426EAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToggleSwitchDemoApp", "ToggleSwitchDemoApp\ToggleSwitchDemoApp.csproj", "{235D56B8-0F35-4568-A282-65E99731E67D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{ADBFC846-E579-4938-9881-AB9051426EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADBFC846-E579-4938-9881-AB9051426EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADBFC846-E579-4938-9881-AB9051426EAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{235D56B8-0F35-4568-A282-65E99731E67D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{235D56B8-0F35-4568-A282-65E99731E67D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{235D56B8-0F35-4568-A282-65E99731E67D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{235D56B8-0F35-4568-A282-65E99731E67D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

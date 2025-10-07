@@ -49,3 +49,11 @@ To use the ToggleSwitch control in your WPF application, follow these steps:
 - AutomationProperties.Name is bound to the label.
 - Focusable container for keyboard navigation.
 - Optional label for screen readers and clarity.
+
+## 🎨 Theme Switching
+
+To switch between light and dark themes, you can use the `ThemeManager` class provided in the library. Call the `SetTheme` method with either `Theme.Light` or `Theme.Dark` as an argument.
+```csharp
+using ToggleSwitchLibrary;
+
+ThemeManager.SetTheme(Theme.Light);
